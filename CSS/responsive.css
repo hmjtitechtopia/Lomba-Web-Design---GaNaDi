@@ -1,0 +1,251 @@
+/* Responsif Ukuran Layar */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+.main {
+    overflow-x: clip;
+    overflow-y: visible;
+}
+
+.container {
+    width: calc(100% - 2rem);
+    max-width: 1120px;
+    margin-inline: auto;
+}
+
+.hero {
+    min-height: 100vh;
+    min-height: 100svh;
+}
+
+.hero .content {
+    width: 100%;
+    max-width: 1120px;
+    margin-inline: auto;
+}
+
+.hero .content h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    overflow-wrap: anywhere;
+}
+
+.hero .content h1 span {
+    overflow-wrap: anywhere;
+}
+
+.hero .content .cta {
+    max-width: 100%;
+    font-size: clamp(0.95rem, 2vw, 1.4rem);
+    line-height: 1.4;
+    text-align: center;
+}
+
+.nav {
+    width: calc(100% - 2rem);
+    max-width: 1120px;
+}
+
+.nav__logo {
+    flex: 0 0 auto;
+}
+
+.nav__logo img {
+    width: clamp(44px, 6vw, 56px);
+    max-width: 100%;
+}
+
+.nav__toggle,
+.nav__close {
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.home {
+    min-height: 0;
+    height: auto;
+    padding-top: 0;
+}
+
+.home__container.container {
+    min-width: 0;
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding: 0;
+}
+
+.home > .home__container {
+    padding: clamp(5rem, 8vw, 7rem) clamp(1rem, 4vw, 2rem) 2.5rem;
+}
+
+.home__content,
+.home__data,
+.home__photo-grid,
+.home__photo-card {
+    min-width: 0;
+}
+
+.home__content {
+    width: 100%;
+}
+
+.home__title {
+    position: static;
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+}
+
+.home__description {
+    font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+    line-height: 1.7;
+}
+
+.home__photo-grid {
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+.home__photo-card img,
+.home__photo-grid .home__photo-card img {
+    width: 100%;
+    max-width: none;
+    height: clamp(220px, 24vw, 280px);
+    object-fit: cover;
+}
+
+.home__photo-info {
+    padding: clamp(0.9rem, 2vw, 1.2rem);
+}
+
+.home__photo-info h3 {
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.home__photo-info p {
+    font-size: clamp(0.9rem, 1.3vw, 0.95rem);
+    line-height: 1.7;
+}
+
+.ornamen {
+    max-width: none;
+}
+
+.section-ornamen {
+    isolation: isolate;
+}
+
+.section-ornamen > .ornamen {
+    width: clamp(56px, 10vw, 140px);
+    height: auto;
+    max-width: none;
+    opacity: 0.55;
+}
+
+.section-ornamen > .ornamen-tl {
+    top: 1rem;
+    right: auto;
+    bottom: auto;
+    left: 1rem;
+}
+
+.section-ornamen > .ornamen-tr {
+    top: 1rem;
+    right: 1rem;
+    bottom: auto;
+    left: auto;
+}
+
+.section-ornamen > .ornamen-bl {
+    top: auto;
+    right: auto;
+    bottom: 1rem;
+    left: 1rem;
+}
+
+.section-ornamen > .ornamen-br {
+    top: auto;
+    right: 1rem;
+    bottom: 1rem;
+    left: auto;
+}
+
+
+@media (max-width: 1150px) {
+    .nav__menu {
+        z-index: 1;
+        max-height: 100vh;
+        max-height: 100svh;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    .nav__list {
+        padding-inline: 1rem;
+    }
+
+    .home__photo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .home > .home__container {
+        padding-top: 5.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .container,
+    .nav {
+        width: calc(100% - 1.5rem);
+    }
+
+    .hero .content {
+        padding-inline: 1.25rem;
+    }
+
+    .hero .content .cta {
+        padding: 0.85rem 1.1rem;
+    }
+
+    .home__container {
+        padding: 0;
+    }
+
+    .home > .home__container {
+        padding: 5rem 1rem 2rem;
+    }
+
+    .home__photo-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.25rem;
+    }
+
+    .home__photo-card img,
+    .home__photo-grid .home__photo-card img {
+        height: clamp(210px, 65vw, 280px);
+    }
+
+    .ornamen {
+        width: 75px;
+        height: 75px;
+        opacity: 0.35;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
